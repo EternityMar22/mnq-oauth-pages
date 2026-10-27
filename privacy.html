@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the MNQ Backup OAuth application.">
+  <title>Privacy Policy · MNQ Backup</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">MNQ Backup</a>
+    <nav aria-label="Site">
+      <a href="./">Home</a>
+      <a href="./terms.html">Terms</a>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">MNQ Backup</p>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: October 27, 2026</p>
+
+    <section>
+      <h2>Purpose and operator</h2>
+      <p>MNQ Backup is a personal-use Google OAuth application used by the MNQ owner to authorize rclone on the owner-managed MNQ host. It supports storing and retrieving MNQ SQLite database backup data in the owner’s Google Drive. This static website does not run the backup process and does not receive database files.</p>
+    </section>
+
+    <section>
+      <h2>Google Drive data and use</h2>
+      <p>During authorization, rclone requests the Google Drive scope configured for its remote. The requested scope is shown in Google’s consent flow and determines what Drive files the client can access. rclone uses that access to work with backup repository files, including listing, uploading, downloading, or removing files when the configured backup workflow calls for those actions. The OAuth client is not intended to access Drive data for any other purpose.</p>
+      <p>Backup transfers occur between rclone on the MNQ host and Google Drive. This website and the GitHub repository do not receive or store the Drive files. Google processes Drive data under Google’s own terms and privacy policies.</p>
+    </section>
+
+    <section>
+      <h2>Encryption and storage</h2>
+      <p>When the MNQ host is configured to use Restic for remote backups, Restic encrypts repository data on that host before rclone transfers it to Drive. Encryption depends on the host’s Restic configuration and passphrase; this OAuth application and website do not perform encryption or manage the passphrase.</p>
+      <p>The backup repository is stored in the Google Drive account selected by the owner. Retention and deletion are controlled by the owner’s backup configuration and Drive account. Revoking OAuth access prevents future access through this client but does not delete files already stored in Drive.</p>
+    </section>
+
+    <section>
+      <h2>Credentials and protection</h2>
+      <p>When rclone is configured on the MNQ host, its configuration contains the OAuth information needed to connect to Google Drive, including authorization tokens. This website never receives or stores those credentials. Their protection depends on access controls and security practices on the host; this website makes no claim that the rclone configuration is encrypted at rest.</p>
+    </section>
+
+    <section>
+      <h2>Revoking access</h2>
+      <p>The owner can remove MNQ Backup from the Google Account’s <a href="https://myaccount.google.com/connections" rel="noopener noreferrer">third-party connections</a>. The owner can also remove the saved token from rclone’s configuration. Removing authorization does not remove existing backup files from Drive.</p>
+    </section>
+
+    <section>
+      <h2>Website information</h2>
+      <p>This site is static and has no login, contact form, or analytics code. GitHub Pages hosts the pages and may process standard request information such as visitor IP addresses under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">GitHub Privacy Statement</a>.</p>
+    </section>
+
+    <section>
+      <h2>Policy changes</h2>
+      <p>This policy will be updated if the application’s data practices change.</p>
+    </section>
+  </main>
+  <footer><a href="./">MNQ Backup</a> · <a href="./terms.html">Terms of Use</a></footer>
+</body>
+</html>
