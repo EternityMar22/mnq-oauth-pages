@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information about the MNQ personal database backup workflow.">
+  <title>MNQ Backup</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">MNQ Backup</a>
+    <nav aria-label="Site">
+      <a href="./privacy.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">Personal backup workflow</p>
+    <h1>MNQ database backups with Google Drive</h1>
+    <p class="lead">MNQ Backup is the OAuth application the MNQ owner uses with rclone to store and retrieve backups of the MNQ SQLite database in the owner’s Google Drive.</p>
+    <p>The MNQ service can create and verify local SQLite snapshots. When the MNQ host is configured to use Restic for remote backups, Restic encrypts the repository before rclone transfers it to Google Drive. Encryption depends on that server-side configuration; this website does not run backup jobs or handle backup files.</p>
+
+    <section>
+      <h2>How the workflow is used</h2>
+      <div class="grid">
+        <div class="panel">
+          <h2>Create and verify</h2>
+          <p>The MNQ host creates a SQLite snapshot and checks it before remote transfer.</p>
+        </div>
+        <div class="panel">
+          <h2>Store securely</h2>
+          <p>Where Restic is configured, it encrypts backup data on the host before rclone sends it to Drive.</p>
+        </div>
+        <div class="panel">
+          <h2>Restore when needed</h2>
+          <p>rclone retrieves the repository data from Drive so the owner can inspect or restore a backup.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Policies</h2>
+      <p>Read the <a href="./privacy.html">Privacy Policy</a> for details about Google Drive access, local credentials, storage, and revoking authorization. The <a href="./terms.html">Terms of Use</a> describe the personal-use scope of this workflow.</p>
+    </section>
+  </main>
+  <footer>MNQ Backup · Personal use</footer>
+</body>
+</html>
